@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="hi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>विवाह निमंत्रण | आयु० पूजा गुप्ता संग चि० गणेश कानू</title>
+    
+    <!-- Tailwind CSS for responsive layout and utility styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts for authentic Hindi Devanagari Calligraphy -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Tiro+Devanagari+Hindi:ital@0;1&family=Yatra+One&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        royalMaroon: '#4A0404',
+                        deepCrimson: '#6B0F1A',
+                        velvetRed: '#800020',
+                        champagneGold: '#F3E5AB',
+                        antiqueGold: '#D4AF37',
+                        brightGold: '#FFD700',
+                        warmIvory: '#FFFDF7',
+                        sandalwood: '#F9F1DF'
+                    },
+                    fontFamily: {
+                        heading: ['"Yatra One"', 'serif'],
+                        display: ['"Rozha One"', 'serif'],
+                        body: ['"Tiro Devanagari Hindi"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Royal Traditional Styles & Animations */
+        :root {
+            --gold-gradient: linear-gradient(135deg, #BF953F 0%, #FCF6BA 25%, #B38728 50%, #FBF5B7 75%, #AA771C 100%);
+            --maroon-gradient: radial-gradient(circle at center, #780A18 0%, #4A0404 70%, #2D0202 100%);
+        }
+
+        body {
+            background-color: #FFFDF7;
+            color: #3D0A0A;
+            font-family: 'Tiro Devanagari Hindi', serif;
+            overflow-x: hidden;
+        }
+
+        /* Ornamental Gold Text Effect */
+        .gold-text {
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: goldShimmer 4s linear infinite;
+        }
+
+        @keyframes goldShimmer {
+            0% { background-position: 0% center; }
+            100% { background-position: 200% center; }
+        }
+
+        /* Rotating Sacred Mandala Background */
+        .mandala-spin {
+            animation: slowSpin 45s linear infinite;
+        }
+        .mandala-spin-reverse {
+            animation: slowSpinReverse 60s linear infinite;
+        }
+
+        @keyframes slowSpin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        @keyframes slowSpinReverse {
+            from { transform: rotate(360deg); }
+            to { transform: rotate(0deg); }
+        }
+
+        /* Divine Aura Pulse for Ganesha & Namaskar */
+        .divine-aura {
+            animation: auraPulse 3.5s ease-in-out infinite;
+        }
+
+        @keyframes auraPulse {
+            0%, 100% {
+                filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.45));
+                transform: scale(1);
+            }
+            50% {
+                filter: drop-shadow(0 0 28px rgba(255, 215, 0, 0.85));
+                transform: scale(1.03);
+            }
+        }
+
+        /* Gentle Floating Animation */
+        .float-gentle {
+            animation: floatGentle 4s ease-in-out infinite;
+        }
+
+        @keyframes floatGentle {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Scroll Reveal Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(45px) scale(0.97);
+            transition: all 0.95s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-45px);
+            transition: all 0.95s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(45px);
+            transition: all 0.95s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal-zoom {
+            opacity: 0;
+            transform: scale(0.85);
+            transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal.active,
+        .reveal-left.active,
+        .reveal-right.active,
+        .reveal-zoom.active {
+            opacity: 1;
+            transform: translate(0, 0) scale(1);
+        }
+
+        /* Traditional Royal Border Frame */
+        .royal-card {
+            background: linear-gradient(180deg, #FFFDF7 0%, #FAF0DC 100%);
+            border: 2px solid #D4AF37;
+            box-shadow: 0 12px 32px -8px rgba(74, 4, 4, 0.15), inset 0 0 0 4px #FFFDF7, inset 0 0 0 5px rgba(212, 175, 55, 0.45);
+            position: relative;
+        }
+
+        /* Floating Petals Container */
+        #petals-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 40;
+        }
+
+        /* Decorative Divider */
+        .ornate-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+        .ornate-divider::before,
+        .ornate-divider::after {
+            content: "";
+            height: 2px;
+            flex: 1;
+            max-width: 120px;
+            background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #2D0202;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D4AF37;
+            border-radius: 999px;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-amber-300 selection:text-red-950">
+
+    <!-- Floating Marigold & Rose Petals Canvas -->
+    <canvas id="petals-canvas"></canvas>
+
+    <!-- Top Sacred Toran / Floral Garland Banner -->
+    <div class="fixed top-0 left-0 right-0 z-30 pointer-events-none overflow-hidden h-8 sm:h-10 opacity-90">
+        <svg class="w-full h-full" preserveAspectRatio="none" viewBox="0 0 1200 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 0 Q 50 38, 100 0 Q 150 38, 200 0 Q 250 38, 300 0 Q 350 38, 400 0 Q 450 38, 500 0 Q 550 38, 600 0 Q 650 38, 700 0 Q 750 38, 800 0 Q 850 38, 900 0 Q 950 38, 1000 0 Q 1050 38, 1100 0 Q 1150 38, 1200 0" stroke="#D4AF37" stroke-width="3" fill="rgba(74, 4, 4, 0.85)"/>
+            <circle cx="50" cy="19" r="4" fill="#FFD700"/>
+            <circle cx="150" cy="19" r="4" fill="#FF8C00"/>
+            <circle cx="250" cy="19" r="4" fill="#FFD700"/>
+            <circle cx="350" cy="19" r="4" fill="#FF8C00"/>
+            <circle cx="450" cy="19" r="4" fill="#FFD700"/>
+            <circle cx="550" cy="19" r="4" fill="#FF8C00"/>
+            <circle cx="650" cy="19" r="4" fill="#FFD700"/>
+            <circle cx="750" cy="19" r="4" fill="#FF8C00"/>
+            <circle cx="850" cy="19" r="4" fill="#FFD700"/>
+            <circle cx="950" cy="19" r="4" fill="#FF8C00"/>
+            <circle cx="1050" cy="19" r="4" fill="#FFD700"/>
+            <circle cx="1150" cy="19" r="4" fill="#FF8C00"/>
+        </svg>
+    </div>
+
+    <!-- ===================================================================== -->
+    <!-- SECTION 1: HERO / OPENING WITH LORD GANESHA                           -->
+    <!-- ===================================================================== -->
+    <header class="relative min-h-screen flex flex-col items-center justify-center text-center px-4 py-16 overflow-hidden text-amber-50" style="background: var(--maroon-gradient);">
+        
+        <!-- Background Rotating Sacred Mandala -->
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-15">
+            <svg class="w-[520px] h-[520px] sm:w-[780px] sm:h-[780px] mandala-spin text-amber-300" viewBox="0 0 200 200" fill="none" stroke="currentColor">
+                <circle cx="100" cy="100" r="95" stroke-width="0.6" stroke-dasharray="3 3"/>
+                <circle cx="100" cy="100" r="82" stroke-width="1"/>
+                <circle cx="100" cy="100" r="65" stroke-width="0.6"/>
+                <circle cx="100" cy="100" r="45" stroke-width="1.2"/>
+                <g stroke-width="0.6">
+                    <path d="M100 5 L100 195 M5 100 L195 100 M32 32 L168 168 M168 32 L32 168"/>
+                    <polygon points="100,12 122,78 188,100 122,122 100,188 78,122 12,100 78,78" fill="none"/>
+                    <polygon points="100,12 122,78 188,100 122,122 100,188 78,122 12,100 78,78" fill="none" transform="rotate(45 100 100)"/>
+                </g>
+            </svg>
+        </div>
+
+        <!-- Ornamental Corner Frames -->
+        <div class="absolute top-6 left-4 sm:top-8 sm:left-8 w-16 h-16 sm:w-24 sm:h-24 border-t-2 border-l-2 border-amber-400/60 rounded-tl-2xl pointer-events-none"></div>
+        <div class="absolute top-6 right-4 sm:top-8 sm:right-8 w-16 h-16 sm:w-24 sm:h-24 border-t-2 border-r-2 border-amber-400/60 rounded-tr-2xl pointer-events-none"></div>
+        <div class="absolute bottom-6 left-4 sm:bottom-8 sm:left-8 w-16 h-16 sm:w-24 sm:h-24 border-b-2 border-l-2 border-amber-400/60 rounded-bl-2xl pointer-events-none"></div>
+        <div class="absolute bottom-6 right-4 sm:bottom-8 sm:right-8 w-16 h-16 sm:w-24 sm:h-24 border-b-2 border-r-2 border-amber-400/60 rounded-br-2xl pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-3xl mx-auto flex flex-col items-center">
+            
+            <!-- Sacred Invocation -->
+            <p class="font-heading text-xl sm:text-3xl tracking-wider gold-text mb-4 reveal active">
+                !! श्री गणेशाय नमः !!
+            </p>
+
+            <!-- Ornate Golden Lord Ganesha SVG Emblem -->
+            <div class="relative my-3 sm:my-5 divine-aura reveal-zoom active">
+                <div class="w-36 h-36 sm:w-44 sm:h-44 rounded-full bg-gradient-to-b from-amber-500/20 to-red-950/60 border-2 border-amber-400/70 flex items-center justify-center p-3 shadow-2xl">
+                    <!-- Custom Artistic Hindu Lord Ganesha Vector -->
+                    <svg viewBox="0 0 220 220" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="ganeshaGold" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#FFF2B2"/>
+                                <stop offset="45%" stop-color="#FFD700"/>
+                                <stop offset="100%" stop-color="#B8860B"/>
+                            </linearGradient>
+                        </defs>
+                        <!-- Crown (Mukut) -->
+                        <path d="M85 48 Q110 15 135 48 Z" fill="url(#ganeshaGold)"/>
+                        <circle cx="110" cy="22" r="5" fill="#FFF2B2"/>
+                        <path d="M78 56 Q110 42 142 56" stroke="url(#ganeshaGold)" stroke-width="5" stroke-linecap="round" fill="none"/>
+                        <!-- Tilak on Forehead -->
+                        <path d="M104 62 Q110 74 116 62" stroke="#FF4500" stroke-width="3" fill="none" stroke-linecap="round"/>
+                        <circle cx="110" cy="68" r="2.2" fill="#FFD700"/>
+                        <!-- Left & Right Ears -->
+                        <path d="M74 66 C44 60, 38 108, 72 114 C64 98, 66 80, 74 66 Z" fill="url(#ganeshaGold)" opacity="0.92"/>
+                        <path d="M146 66 C176 60, 182 108, 148 114 C156 98, 154 80, 146 66 Z" fill="url(#ganeshaGold)" opacity="0.92"/>
+                        <!-- Eyes -->
+                        <path d="M86 78 Q94 73 101 78" stroke="url(#ganeshaGold)" stroke-width="3" stroke-linecap="round" fill="none"/>
+                        <path d="M119 78 Q126 73 134 78" stroke="url(#ganeshaGold)" stroke-width="3" stroke-linecap="round" fill="none"/>
+                        <!-- Sacred Curved Trunk (Left-turning Vamamukhi) -->
+                        <path d="M102 82 C100 108, 86 128, 74 124 C64 120, 68 106, 78 109 C82 110, 81 116, 76 116" stroke="url(#ganeshaGold)" stroke-width="9" stroke-linecap="round" fill="none"/>
+                        <!-- Tusks -->
+                        <path d="M90 98 L81 105" stroke="#FFFDF7" stroke-width="3" stroke-linecap="round"/>
+                        <path d="M124 96 L134 104" stroke="#FFFDF7" stroke-width="3.5" stroke-linecap="round"/>
+                        <!-- Divine Belly / Body Curve -->
+                        <path d="M76 134 C58 158, 76 190, 110 190 C144 190, 162 158, 144 134" stroke="url(#ganeshaGold)" stroke-width="7" stroke-linecap="round" fill="none"/>
+                        <!-- Sacred Thread (Janeu) -->
+                        <path d="M84 136 Q112 162 138 176" stroke="#FFF2B2" stroke-width="2.5" stroke-dasharray="3 2" fill="none"/>
+                        <!-- Lotus Base -->
+                        <path d="M62 196 Q110 212 158 196 Q110 202 62 196 Z" fill="url(#ganeshaGold)"/>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Sacred Ganesha Shloka from Card -->
+            <div class="mt-3 px-4 py-3 rounded-2xl bg-red-950/50 border border-amber-400/30 backdrop-blur-sm reveal active">
+                <p class="text-lg sm:text-2xl text-amber-100 leading-relaxed font-medium">
+                    वक्रतुण्ड महाकाय, सूर्यकोटि समप्रभः ।<br>
+                    निर्विघ्नं कुरु मे देव, सर्वकार्येषु सर्वदा ।।
+                </p>
+            </div>
+
+            <!-- Divine Blessing Line -->
+            <div class="mt-6 ornate-divider w-full max-w-md reveal active">
+                <span class="text-amber-300 text-lg">❖</span>
+            </div>
+            <p class="mt-3 font-heading text-xl sm:text-3xl text-amber-200 tracking-wide reveal active">
+                परमपिता परमात्मा की असीम अनुकम्पा से
+            </p>
+
+            <!-- Main Couple Banner Preview -->
+            <div class="mt-8 p-6 sm:p-8 rounded-3xl border border-amber-400/40 bg-gradient-to-b from-amber-500/10 to-red-950/60 shadow-2xl reveal active">
+                <span class="inline-block px-4 py-1 rounded-full bg-amber-400/20 border border-amber-300/40 text-amber-200 text-sm sm:text-base mb-3">
+                    शुभ विवाह निमंत्रण
+                </span>
+                <h1 class="font-display text-3xl sm:text-5xl md:text-6xl gold-text py-1">
+                    आयु० पूजा गुप्ता
+                </h1>
+                <div class="my-2 flex items-center justify-center gap-3">
+                    <span class="h-[1px] w-12 bg-amber-400/60"></span>
+                    <span class="px-4 py-1 rounded-full bg-amber-400 text-red-950 font-heading text-lg sm:text-xl shadow-md">
+                        संग
+                    </span>
+                    <span class="h-[1px] w-12 bg-amber-400/60"></span>
+                </div>
+                <h2 class="font-display text-3xl sm:text-5xl md:text-6xl gold-text py-1">
+                    चि० गणेश कानू
+                </h2>
+                <p class="mt-4 text-amber-100/90 text-base sm:text-xl">
+                    शनिवार, दिनांक 12 दिसम्बर 2026
+                </p>
+            </div>
+
+            <!-- Scroll Down Prompt -->
+            <a href="#couple-details" class="mt-10 inline-flex flex-col items-center text-amber-200 hover:text-amber-100 transition group cursor-pointer">
+                <span class="text-sm sm:text-base tracking-wider mb-1">नीचे स्क्रॉल करें</span>
+                <div class="w-8 h-12 rounded-full border-2 border-amber-300/70 flex justify-center p-1.5">
+                    <div class="w-1.5 h-3 bg-amber-300 rounded-full animate-bounce"></div>
+                </div>
+            </a>
+        </div>
+    </header>
+
+    <!-- ===================================================================== -->
+    <!-- SECTION 2: COUPLE & FAMILY INTRODUCTION                               -->
+    <!-- ===================================================================== -->
+    <section id="couple-details" class="relative py-16 sm:py-24 px-4 sm:px-8 max-w-5xl mx-auto">
+        
+        <div class="text-center mb-12 reveal">
+            <span class="text-amber-700 font-semibold tracking-widest text-sm sm:text-base uppercase">॥ मंगल परिणय ॥</span>
+            <h2 class="font-heading text-3xl sm:text-5xl text-royalMaroon mt-1">वर-वधू परिचय</h2>
+            <div class="ornate-divider mt-3">
+                <span class="text-amber-600 text-xl">❦</span>
+            </div>
+        </div>
+
+        <!-- Couple Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-11 gap-8 items-center">
+            
+            <!-- Bride Card (आयु० पूजा गुप्ता) -->
+            <div class="md:col-span-5 royal-card rounded-3xl p-6 sm:p-8 text-center reveal-left">
+                <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-red-900 text-amber-300 flex items-center justify-center border-2 border-amber-500 shadow-lg">
+                    <span class="font-display text-2xl">P</span>
+                </div>
+                <span class="inline-block px-3 py-1 rounded-full bg-red-900/10 text-red-900 font-semibold text-sm mb-2">
+                    सौभाग्यकांक्षिणी वधू
+                </span>
+                <h3 class="font-display text-3xl sm:text-4xl text-royalMaroon mb-4">
+                    आयु० पूजा गुप्ता
+                </h3>
+                <div class="space-y-2.5 text-base sm:text-lg text-stone-800 leading-relaxed border-t border-amber-500/30 pt-4">
+                    <p>
+                        <span class="font-bold text-red-900">सुपौत्री :</span><br>
+                        श्रीमती शारदा देवी एवं स्व० श्री गोरख गुप्ता
+                    </p>
+                    <p>
+                        <span class="font-bold text-red-900">सुपुत्री :</span><br>
+                        श्रीमती पार्वती देवी एवं श्री दीप गुप्ता
+                    </p>
+                    <p class="pt-1 text-red-950 font-semibold">
+                        📍 ग्राम राजगढ़ सेंटर, गोहपुर, असम
+                    </p>
+                </div>
+            </div>
+
+            <!-- Center 'संग' & P ♥ G Monogram Emblem -->
+            <div class="md:col-span-1 flex flex-col items-center justify-center my-2 md:my-0 reveal-zoom">
+                <div class="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-gradient-to-br from-red-900 to-red-950 border-4 border-amber-400 shadow-xl flex flex-col items-center justify-center text-amber-200 float-gentle">
+                    <div class="text-xs sm:text-sm tracking-widest text-amber-300 font-semibold">P ♥ G</div>
+                    <div class="font-heading text-2xl sm:text-3xl gold-text leading-none my-0.5">संग</div>
+                    <div class="text-[11px] text-amber-200/80">शुभ बंधन</div>
+                </div>
+            </div>
+
+            <!-- Groom Card (चि० गणेश कानू) -->
+            <div class="md:col-span-5 royal-card rounded-3xl p-6 sm:p-8 text-center reveal-right">
+                <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-red-900 text-amber-300 flex items-center justify-center border-2 border-amber-500 shadow-lg">
+                    <span class="font-display text-2xl">G</span>
+                </div>
+                <span class="inline-block px-3 py-1 rounded-full bg-red-900/10 text-red-900 font-semibold text-sm mb-2">
+                    चिरंजीवी वर
+                </span>
+                <h3 class="font-display text-3xl sm:text-4xl text-royalMaroon mb-4">
+                    चि० गणेश कानू
+                </h3>
+                <div class="space-y-2.5 text-base sm:text-lg text-stone-800 leading-relaxed border-t border-amber-500/30 pt-4">
+                    <p>
+                        <span class="font-bold text-red-900">सुपुत्र :</span><br>
+                        श्रीमती उर्मिला कानू एवं स्व० श्री ललन कानू
+                    </p>
+                    <p class="pt-2 text-red-950 font-semibold">
+                        📍 कोच गाँव, विश्वनाथ चारिआली, असम
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sacred Swastik Invitation Message -->
+        <div class="mt-12 royal-card rounded-3xl p-6 sm:p-10 text-center max-w-3xl mx-auto reveal">
+            <div class="inline-flex items-center gap-3 sm:gap-5 px-6 py-2.5 rounded-2xl bg-red-900 text-amber-200 border-2 border-amber-400 shadow-md mb-5">
+                <span class="text-2xl sm:text-3xl text-amber-400 font-bold">卐</span>
+                <span class="font-heading text-xl sm:text-3xl tracking-wide">के परिणय बन्धन</span>
+                <span class="text-2xl sm:text-3xl text-amber-400 font-bold">卐</span>
+            </div>
+            <p class="text-lg sm:text-2xl text-stone-800 leading-relaxed font-medium">
+                की मधुर बेला पर आपको सादर आमंत्रित करते हैं।<br>
+                कृपया समयानुसार पधारकर युगल दम्पति को आशीष प्रदान करें।
+            </p>
+        </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- SECTION 3: LIVE WEDDING COUNTDOWN                                     -->
+    <!-- ===================================================================== -->
+    <section class="py-12 px-4 text-amber-50 relative overflow-hidden" style="background: var(--maroon-gradient);">
+        <div class="max-w-4xl mx-auto text-center reveal">
+            <p class="text-amber-300 text-base sm:text-lg mb-1">शुभ विवाह की मधुर बेला में शेष समय</p>
+            <h3 class="font-heading text-2xl sm:text-4xl gold-text mb-6">12 दिसम्बर 2026 • शनिवार</h3>
+            
+            <div id="countdown-box" class="grid grid-cols-4 gap-2 sm:gap-6 max-w-xl mx-auto">
+                <div class="bg-red-950/70 border border-amber-400/50 rounded-2xl p-3 sm:p-5 shadow-lg">
+                    <div id="days" class="font-display text-2xl sm:text-5xl text-amber-300">00</div>
+                    <div class="text-xs sm:text-base text-amber-100/80 mt-1">दिन</div>
+                </div>
+                <div class="bg-red-950/70 border border-amber-400/50 rounded-2xl p-3 sm:p-5 shadow-lg">
+                    <div id="hours" class="font-display text-2xl sm:text-5xl text-amber-300">00</div>
+                    <div class="text-xs sm:text-base text-amber-100/80 mt-1">घंटे</div>
+                </div>
+                <div class="bg-red-950/70 border border-amber-400/50 rounded-2xl p-3 sm:p-5 shadow-lg">
+                    <div id="minutes" class="font-display text-2xl sm:text-5xl text-amber-300">00</div>
+                    <div class="text-xs sm:text-base text-amber-100/80 mt-1">मिनट</div>
+                </div>
+                <div class="bg-red-950/70 border border-amber-400/50 rounded-2xl p-3 sm:p-5 shadow-lg">
+                    <div id="seconds" class="font-display text-2xl sm:text-5xl text-amber-300">00</div>
+                    <div class="text-xs sm:text-base text-amber-100/80 mt-1">सेकंड</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- SECTION 4: WEDDING EVENTS TIMELINE (वैवाहिक कार्यक्रम)                -->
+    <!-- ===================================================================== -->
+    <section id="events" class="py-16 sm:py-24 px-4 sm:px-8 max-w-6xl mx-auto">
+        
+        <div class="text-center mb-12 reveal">
+            <p class="font-heading text-lg sm:text-xl text-red-900 mb-1">!! श्री गणेशाय नमः !!</p>
+            <div class="inline-flex items-center gap-3 px-6 py-2 rounded-2xl border-2 border-red-900 bg-amber-50 shadow-sm">
+                <span class="text-xl sm:text-2xl text-red-800 font-bold">卐</span>
+                <h2 class="font-heading text-3xl sm:text-5xl text-royalMaroon">वैवाहिक कार्यक्रम</h2>
+                <span class="text-xl sm:text-2xl text-red-800 font-bold">卐</span>
+            </div>
+        </div>
+
+        <!-- 4 Ceremonies Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            <!-- Event 1: शुभ लगन -->
+            <div class="royal-card rounded-3xl p-6 text-center hover:-translate-y-2 transition-transform duration-300 reveal">
+                <div class="w-14 h-14 mx-auto mb-4 rounded-2xl bg-amber-100 border border-amber-400 flex items-center justify-center text-2xl shadow-inner">
+                    🪔
+                </div>
+                <h3 class="font-heading text-2xl sm:text-3xl text-royalMaroon mb-2">शुभ लगन</h3>
+                <div class="w-12 h-0.5 bg-amber-500 mx-auto my-3"></div>
+                <p class="text-lg font-semibold text-red-900">मंगलवार</p>
+                <p class="text-xl font-bold text-stone-900 mt-1">दिनांक 8 दिसम्बर</p>
+                <p class="text-lg font-bold text-amber-800">2026</p>
+            </div>
+
+            <!-- Event 2: हल्दी-मटकोर -->
+            <div class="royal-card rounded-3xl p-6 text-center hover:-translate-y-2 transition-transform duration-300 reveal" style="transition-delay: 100ms;">
+                <div class="w-14 h-14 mx-auto mb-4 rounded-2xl bg-yellow-100 border border-yellow-500 flex items-center justify-center text-2xl shadow-inner">
+                    🌼
+                </div>
+                <h3 class="font-heading text-2xl sm:text-3xl text-royalMaroon mb-2">हल्दी-मटकोर</h3>
+                <div class="w-12 h-0.5 bg-amber-500 mx-auto my-3"></div>
+                <p class="text-lg font-semibold text-red-900">शुक्रवार</p>
+                <p class="text-xl font-bold text-stone-900 mt-1">दिनांक 11 दिसम्बर</p>
+                <p class="text-lg font-bold text-amber-800">2026</p>
+            </div>
+
+            <!-- Event 3: शुभ विवाह (Main Highlighted Card) -->
+            <div class="rounded-3xl p-6 text-center text-amber-50 border-2 border-amber-300 shadow-2xl relative overflow-hidden hover:-translate-y-2 transition-transform duration-300 reveal" style="background: var(--maroon-gradient); transition-delay: 200ms;">
+                <span class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full bg-amber-400 text-red-950 text-xs font-bold">
+                    मुख्य समारोह
+                </span>
+                <div class="w-14 h-14 mx-auto mb-4 rounded-2xl bg-amber-400/20 border border-amber-300 flex items-center justify-center text-2xl">
+                    🔥
+                </div>
+                <h3 class="font-heading text-2xl sm:text-3xl gold-text mb-2">शुभ विवाह</h3>
+                <div class="w-12 h-0.5 bg-amber-400 mx-auto my-3"></div>
+                <p class="text-lg font-semibold text-amber-200">शनिवार</p>
+                <p class="text-xl font-bold text-white mt-1">दिनांक 12 दिसम्बर</p>
+                <p class="text-lg font-bold text-amber-300">2026</p>
+            </div>
+
+            <!-- Event 4: विदाई -->
+            <div class="royal-card rounded-3xl p-6 text-center hover:-translate-y-2 transition-transform duration-300 reveal" style="transition-delay: 300ms;">
+                <div class="w-14 h-14 mx-auto mb-4 rounded-2xl bg-rose-100 border border-rose-400 flex items-center justify-center text-2xl shadow-inner">
+                    💐
+                </div>
+                <h3 class="font-heading text-2xl sm:text-3xl text-royalMaroon mb-2">विदाई</h3>
+                <div class="w-12 h-0.5 bg-amber-500 mx-auto my-3"></div>
+                <p class="text-lg font-semibold text-red-900">रविवार</p>
+                <p class="text-xl font-bold text-stone-900 mt-1">दिनांक 13 दिसम्बर</p>
+                <p class="text-lg font-bold text-amber-800">2026</p>
+            </div>
+        </div>
+
+        <!-- Wedding Venue Box (वैवाहिक स्थल) -->
+        <div class="mt-12 royal-card rounded-3xl p-6 sm:p-8 text-center max-w-2xl mx-auto reveal">
+            <div class="flex items-center justify-center gap-3 text-2xl sm:text-3xl mb-2">
+                <span>🎺</span>
+                <h3 class="font-heading text-2xl sm:text-3xl text-royalMaroon">–: वैवाहिक स्थल :–</h3>
+                <span>🥁</span>
+            </div>
+            <p class="text-xl sm:text-2xl font-bold text-stone-900 mt-2">
+                ग्राम राजगढ़ सेंटर, गोहपुर, असम
+            </p>
+            <div class="mt-4">
+                <a href="https://www.google.com/maps/search/?api=1&query=Rajgarh+Center+Gohpur+Assam" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-red-900 hover:bg-red-800 text-amber-100 font-medium text-sm sm:text-base transition shadow-md">
+                    <span>📍 Google Map पर स्थान देखें</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- SECTION 5: CHILD'S INVITATION QUOTE (बाल मनुहार - आरव गुप्ता)         -->
+    <!-- ===================================================================== -->
+    <section class="py-12 px-4 sm:px-8 max-w-4xl mx-auto">
+        <div class="rounded-3xl p-6 sm:p-10 text-center border-2 border-amber-400 bg-gradient-to-r from-amber-50 via-orange-50 to-amber-50 shadow-xl relative reveal-zoom">
+            <span class="inline-block px-4 py-1 rounded-full bg-red-900 text-amber-200 text-sm sm:text-base font-heading mb-4">
+                ✨ बाल मनुहार ✨
+            </span>
+            <blockquote class="text-xl sm:text-3xl text-royalMaroon leading-relaxed font-medium italic">
+                “फलक से चाँद उतरेगा, सितारे मुस्कुरायेंगे,<br>
+                हमें खुशी तब होगी, जब आप मेरी बुआ की शादी में आयेंगे...”
+            </blockquote>
+            <p class="mt-4 font-heading text-xl sm:text-2xl text-red-900">
+                — आरव गुप्ता
+            </p>
+        </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- SECTION 6: FAMILY & HOSTS (दर्शनाभिलाषी, विनीत, प्रेषक)               -->
+    <!-- ===================================================================== -->
+    <section id="family" class="py-16 sm:py-20 px-4 sm:px-8 max-w-5xl mx-auto">
+        
+        <div class="text-center mb-12 reveal">
+            <span class="text-amber-700 font-semibold tracking-widest text-sm uppercase">॥ स्नेहीजन ॥</span>
+            <h2 class="font-heading text-3xl sm:text-5xl text-royalMaroon mt-1">स्वागताकांक्षी परिवार</h2>
+            <div class="ornate-divider mt-3">
+                <span class="text-amber-600 text-xl">❖</span>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            <!-- दर्शनाभिलाषी Card -->
+            <div class="royal-card rounded-3xl p-6 sm:p-8 reveal-left">
+                <h3 class="font-heading text-2xl sm:text-3xl text-royalMaroon border-b-2 border-amber-400/50 pb-3 mb-5 flex items-center gap-2">
+                    <span>🪔</span> दर्शनाभिलाषी :
+                </h3>
+                <ul class="space-y-3 text-base sm:text-lg text-stone-800 leading-relaxed">
+                    <li>
+                        <span class="font-bold text-red-900">दादा –</span> स्व० गौरव गुप्ता – <span class="font-bold text-red-900">दादी –</span> श्रद्धा गुप्ता, <span class="font-bold text-red-900">दादा –</span> सुभाष, ध्रुव
+                    </li>
+                    <li>
+                        <span class="font-bold text-red-900">चाचा –</span> विनय, मनोज, अमित, संजीव, गुड्डू
+                    </li>
+                    <li>
+                        <span class="font-bold text-red-900">भाई –</span> पंकज गुप्ता, <span class="font-bold text-red-900">भाभी –</span> राखी गुप्ता
+                    </li>
+                    <li>
+                        <span class="font-bold text-red-900">बहन –</span> सोनाली गुप्ता
+                    </li>
+                </ul>
+            </div>
+
+            <!-- विनीत & प्रेषक Card -->
+            <div class="flex flex-col gap-6 reveal-right">
+                
+                <!-- विनीत -->
+                <div class="royal-card rounded-3xl p-6 sm:p-8 text-center flex-1 flex flex-col justify-center">
+                    <h3 class="font-heading text-2xl sm:text-3xl text-royalMaroon mb-2">विनीत :</h3>
+                    <p class="text-lg sm:text-xl font-bold text-stone-900 leading-relaxed">
+                        समस्त गुप्ता परिवार<br>
+                        एवं सम्बन्धी व मित्रगण
+                    </p>
+                </div>
+
+                <!-- प्रेषक & संपर्क -->
+                <div class="royal-card rounded-3xl p-6 sm:p-8 text-center flex-1 flex flex-col justify-center">
+                    <h3 class="font-heading text-2xl sm:text-3xl text-royalMaroon mb-2">प्रेषक :</h3>
+                    <p class="text-xl sm:text-2xl font-bold text-red-950">श्री दीप गुप्ता</p>
+                    <p class="text-base sm:text-lg text-stone-800 mt-1">ग्राम राजगढ़ सेंटर, गोहपुर, असम</p>
+                    
+                    <div class="mt-4 pt-3 border-t border-amber-400/40 flex flex-wrap items-center justify-center gap-3">
+                        <span class="font-bold text-red-900 text-base sm:text-lg">मो० :</span>
+                        <a href="tel:9716969796" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-red-900 text-amber-100 hover:bg-red-800 text-sm sm:text-base font-semibold transition shadow">
+                            📞 9716969796
+                        </a>
+                        <a href="tel:7053030870" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-red-900 text-amber-100 hover:bg-red-800 text-sm sm:text-base font-semibold transition shadow">
+                            📞 7053030870
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- SECTION 7: CLOSING WITH FOLDED HANDS NAMASKAR (सादर नमस्कार)          -->
+    <!-- ===================================================================== -->
+    <footer class="relative py-20 sm:py-28 px-4 text-center text-amber-50 overflow-hidden" style="background: var(--maroon-gradient);">
+        
+        <!-- Background Rotating Subtle Mandala -->
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-10">
+            <svg class="w-[460px] h-[460px] sm:w-[640px] sm:h-[640px] mandala-spin-reverse text-amber-300" viewBox="0 0 200 200" fill="none" stroke="currentColor">
+                <circle cx="100" cy="100" r="90" stroke-width="1"/>
+                <circle cx="100" cy="100" r="70" stroke-width="0.8" stroke-dasharray="4 4"/>
+                <polygon points="100,15 125,75 185,100 125,125 100,185 75,125 15,100 75,75" fill="none" stroke-width="0.8"/>
+            </svg>
+        </div>
+
+        <div class="relative z-10 max-w-2xl mx-auto flex flex-col items-center reveal-zoom">
+            
+            <!-- Custom Golden Folded Hands (Namaskar Mudra) SVG Illustration -->
+            <div class="w-36 h-36 sm:w-44 sm:h-44 rounded-full bg-gradient-to-b from-amber-400/20 to-red-950/70 border-2 border-amber-400/70 flex items-center justify-center p-4 shadow-2xl divine-aura mb-6">
+                <svg viewBox="0 0 200 200" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="namaskarGold" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#FFF5C0"/>
+                            <stop offset="50%" stop-color="#FFD700"/>
+                            <stop offset="100%" stop-color="#B8860B"/>
+                        </linearGradient>
+                    </defs>
+                    <!-- Divine Radiant Rays Behind Hands -->
+                    <g stroke="#FFD700" stroke-width="2" stroke-linecap="round" opacity="0.7">
+                        <line x1="100" y1="14" x2="100" y2="28"/>
+                        <line x1="65" y1="24" x2="72" y2="36"/>
+                        <line x1="135" y1="24" x2="128" y2="36"/>
+                        <line x1="42" y1="48" x2="54" y2="56"/>
+                        <line x1="158" y1="48" x2="146" y2="56"/>
+                    </g>
+                    <!-- Left Folded Palm -->
+                    <path d="M98 38 C90 42, 76 78, 72 115 C70 132, 78 148, 96 154 L98 38 Z" fill="url(#namaskarGold)" stroke="#780A18" stroke-width="1.5"/>
+                    <!-- Right Folded Palm -->
+                    <path d="M102 38 C110 42, 124 78, 128 115 C130 132, 122 148, 104 154 L102 38 Z" fill="url(#namaskarGold)" stroke="#780A18" stroke-width="1.5"/>
+                    <!-- Thumb Silhouettes -->
+                    <path d="M84 95 C72 104, 70 124, 82 136" stroke="#FFF5C0" stroke-width="3" fill="none" stroke-linecap="round"/>
+                    <path d="M116 95 C128 104, 130 124, 118 136" stroke="#FFF5C0" stroke-width="3" fill="none" stroke-linecap="round"/>
+                    <!-- Traditional Bangles / Wrist Ornaments -->
+                    <rect x="66" y="152" width="32" height="8" rx="4" fill="#FFD700" stroke="#780A18" stroke-width="1.2"/>
+                    <rect x="102" y="152" width="32" height="8" rx="4" fill="#FFD700" stroke="#780A18" stroke-width="1.2"/>
+                    <!-- Sleeves / Cuffs -->
+                    <path d="M62 160 L96 160 L92 184 L54 184 Z" fill="#B8860B" opacity="0.9"/>
+                    <path d="M104 160 L138 160 L146 184 L108 184 Z" fill="#B8860B" opacity="0.9"/>
+                </svg>
+            </div>
+
+            <h2 class="font-heading text-3xl sm:text-5xl gold-text mb-3">
+                🙏 सादर नमस्कार 🙏
+            </h2>
+            <p class="font-heading text-xl sm:text-2xl text-amber-200 tracking-wide mb-4">
+                आपके आगमन की प्रतीक्षा में — समस्त गुप्ता परिवार
+            </p>
+            <div class="ornate-divider w-full max-w-xs my-3">
+                <span class="text-amber-300">✦</span>
+            </div>
+            <p class="text-amber-100/85 text-base sm:text-lg max-w-md leading-relaxed">
+                आयु० पूजा गुप्ता एवं चि० गणेश कानू के शुभ विवाह में पधारकर हमें अनुग्रहीत करें।
+            </p>
+
+            <!-- Back to Top Button -->
+            <a href="#" class="mt-8 inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-amber-400/60 bg-amber-400/15 hover:bg-amber-400/25 text-amber-200 text-sm sm:text-base transition">
+                <span>↑ ऊपर जाएं (श्री गणेशाय नमः)</span>
+            </a>
+        </div>
+    </footer>
+
+    <!-- ===================================================================== -->
+    <!-- INTERACTIVE SCRIPTS: SCROLL ANIMATIONS, COUNTDOWN & FLOATING PETALS   -->
+    <!-- ===================================================================== -->
+    <script>
+        // 1. Scroll Reveal Animation using IntersectionObserver
+        document.addEventListener("DOMContentLoaded", () => {
+            const revealElements = document.querySelectorAll(".reveal, .reveal-left, .reveal-right, .reveal-zoom");
+
+            const observerOptions = {
+                threshold: 0.14,
+                rootMargin: "0px 0px -40px 0px"
+            };
+
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("active");
+                    }
+                });
+            }, observerOptions);
+
+            revealElements.forEach((el) => revealObserver.observe(el));
+        });
+
+        // 2. Live Countdown Timer to December 12, 2026
+        function updateCountdown() {
+            const weddingDate = new Date("December 12, 2026 19:00:00").getTime();
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            if (distance <= 0) {
+                document.getElementById("countdown-box").innerHTML = `
+                    <div class="col-span-4 py-4 px-6 rounded-2xl bg-amber-400/20 border border-amber-300 text-amber-200 font-heading text-2xl sm:text-3xl">
+                        शुभ विवाह संपन्न — मंगलमय शुभकामनाएँ!
+                    </div>
+                `;
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").textContent = String(days).padStart(2, "0");
+            document.getElementById("hours").textContent = String(hours).padStart(2, "0");
+            document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
+            document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
+        }
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        // 3. Gentle Floating Marigold & Rose Petals Animation on Canvas
+        window.addEventListener("load", () => {
+            const canvas = document.getElementById("petals-canvas");
+            const ctx = canvas.getContext("2d");
+
+            function resizeCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            resizeCanvas();
+            window.addEventListener("resize", resizeCanvas);
+
+            const petalColors = [
+                "rgba(255, 183, 3, 0.55)",   // Marigold Gold
+                "rgba(251, 133, 0, 0.50)",   // Deep Marigold Orange
+                "rgba(220, 38, 38, 0.40)",   // Rose Crimson
+                "rgba(255, 215, 0, 0.50)"    // Shimmer Gold
+            ];
+
+            const petalCount = window.innerWidth < 640 ? 18 : 30;
+            const petals = [];
+
+            for (let i = 0; i < petalCount; i++) {
+                petals.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    size: Math.random() * 6 + 4,
+                    speedY: Math.random() * 0.9 + 0.4,
+                    speedX: Math.random() * 0.8 - 0.4,
+                    rotation: Math.random() * Math.PI * 2,
+                    rotationSpeed: (Math.random() - 0.5) * 0.03,
+                    color: petalColors[Math.floor(Math.random() * petalColors.length)]
+                });
+            }
+
+            function animatePetals() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                petals.forEach((p) => {
+                    p.y += p.speedY;
+                    p.x += p.speedX + Math.sin(p.y * 0.01) * 0.35;
+                    p.rotation += p.rotationSpeed;
+
+                    if (p.y > canvas.height + 15) {
+                        p.y = -15;
+                        p.x = Math.random() * canvas.width;
+                    }
+                    if (p.x > canvas.width + 15) p.x = -15;
+                    if (p.x < -15) p.x = canvas.width + 15;
+
+                    ctx.save();
+                    ctx.translate(p.x, p.y);
+                    ctx.rotate(p.rotation);
+                    ctx.fillStyle = p.color;
+                    ctx.beginPath();
+                    ctx.ellipse(0, 0, p.size, p.size * 0.55, 0, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.restore();
+                });
+
+                requestAnimationFrame(animatePetals);
+            }
+
+            animatePetals();
+        });
+    </script>
+</body>
+</html>
